@@ -1,0 +1,22 @@
+- tag: header
+  class: site-header
+  children:
+    - tag: h1
+      text: Mijn Geroute App
+    - tag: nav
+      class: main-nav
+      children:
+        - tag: a
+          class: nav-link
+          data-action: navigate # Wordt opgevangen door de router
+          data-path: "#/home"
+          text: Home
+        - tag: a
+          class: nav-link
+          data-action: navigate
+          data-path: "#/about"
+          text: Over Ons
+
+# De container waar de router de pagina's in laadt
+- tag: main
+  id: page-content

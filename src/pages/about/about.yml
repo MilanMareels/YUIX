@@ -1,0 +1,13 @@
+tag: div
+class: page-about
+children:
+  - tag: h2
+    text: Over Ons
+  - tag: p
+    text: Dit is de "Over Ons" pagina.
+  - tag: p
+    text: Onze app is gebouwd met een YAML-gedreven UI-systeem.
+
+  - tag: span
+    id: about-page-text-display
+    class: state-display-value

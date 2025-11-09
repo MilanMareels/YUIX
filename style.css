@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- App Shell & Navigatie --- */
+.site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+}
+.site-header h1 {
+  margin: 0;
+}
+.main-nav {
+  background: #444;
+  padding: 10px;
+  text-align: center;
+}
+.nav-link {
+  display: inline-block;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: #007bff;
+  border-radius: 5px;
+}
+#page-content {
+  padding: 20px;
+}
+
+/* --- Knoppen (voor eventueel toekomstig gebruik) --- */
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* --- Counter Component --- */
+.counter-component {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-display {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 20px;
+  min-width: 50px;
+  text-align: center;
+}

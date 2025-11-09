@@ -1,0 +1,14 @@
+tag: div
+class: page-home
+children:
+  - tag: h2
+    text: Welkom op de Home Pagina
+  - tag: p
+    text: Dit is de homepagina, geladen via de router.
+
+  # --- NIEUW ---
+  - tag: div
+    id: counter-container # De "target" voor ons component
+    # De counter.js zal zichzelf hier in laden
+  - tag: div
+    id: text-container

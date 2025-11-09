@@ -1,0 +1,15 @@
+tag: div
+class: counter-component
+children:
+  - tag: button
+    class: button
+    data-action: decrement # Lokale actie
+    text: "-"
+  - tag: span
+    class: counter-display
+    id: counter-value # BELANGRIJKE ID om de waarde bij te werken
+    text: "0" # Beginwaarde
+  - tag: button
+    class: button
+    data-action: increment # Lokale actie
+    text: "+"
