@@ -9,12 +9,12 @@
         - tag: a
           class: nav-link
           data-action: navigate
-          data-path: "#/home"
+          data-path: "/"
           text: Home
         - tag: a
           class: nav-link
           data-action: navigate
-          data-path: "#/about"
+          data-path: "/about"
           text: Over Ons
 
 - tag: main
