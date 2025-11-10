@@ -19,16 +19,20 @@ export async function initCounter(container) {
 
   const display = element.querySelector("#counter-value");
 
-  setState("counterValue", (newValue) => {
-    display.textContent = newValue || 0;
-  });
+  setState(
+    "counterValue",
+    (newValue) => {
+      display.textContent = newValue;
+    },
+    0
+  );
 
   const actions = {
     increment: () => {
-      store.counterValue = (store.counterValue || 0) + 1;
+      store.counterValue++;
     },
     decrement: () => {
-      store.counterValue = (store.counterValue || 0) - 1;
+      store.counterValue--;
     },
   };
 

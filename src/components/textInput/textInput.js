@@ -17,16 +17,13 @@ export async function initTextInput(container) {
   const display = element.querySelector("#text-display");
   const input = element.querySelector("#text-input");
 
-  setState("myText", (newValue) => {
-    const value = newValue || "";
-
-    if (display) {
-      display.textContent = value;
-    }
-    if (input && input.value !== value) {
-      input.value = value;
-    }
-  });
+  setState(
+    "myText",
+    (newValue) => {
+      display.textContent = newValue;
+    },
+    "Hallo"
+  );
 
   input.addEventListener("input", () => {
     store.myText = input.value;
