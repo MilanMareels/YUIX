@@ -1,10 +1,6 @@
-// src/main.js
-// Zeer simpel: laadt de shell, start de router.
-
 import { loadStaticUI } from "./core/uiBuilder.js";
 import { initRouter } from "./core/router.js";
 
-// async om 'await' te kunnen gebruiken
 document.addEventListener("DOMContentLoaded", async () => {
   const appContainer = document.getElementById("app");
   if (!appContainer) {
@@ -13,11 +9,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    // 1. WACHT tot de App Shell (ui.yml) is geladen en gebouwd
     await loadStaticUI(appContainer);
 
-    // 2. Start de Router.
-    // De router regelt nu ook de navigatiekliks.
     initRouter("page-content");
   } catch (error) {
     console.error("Kon de app niet initialiseren:", error);

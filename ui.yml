@@ -8,15 +8,14 @@
       children:
         - tag: a
           class: nav-link
-          data-action: navigate # Wordt opgevangen door de router
-          data-path: "#/home"
+          data-action: navigate
+          data-path: "/"
           text: Home
         - tag: a
           class: nav-link
           data-action: navigate
-          data-path: "#/about"
+          data-path: "/about"
           text: Over Ons
 
-# De container waar de router de pagina's in laadt
 - tag: main
   id: page-content

@@ -1,6 +1,3 @@
-// src/core/router.js
-// De complete router, handelt ook navigatiekliks af
-
 import { routes } from "../routes/routes.js";
 
 let pageContainer = null;
@@ -15,50 +12,49 @@ export function initRouter(containerId) {
 
   navLinks = document.querySelectorAll('.nav-link[data-action="navigate"]');
 
-  // Luister naar URL hash-veranderingen (back/forward knop)
-  window.addEventListener("hashchange", handleRouteChange);
+  window.addEventListener("popstate", handleRouteChange);
 
-  // VERVANGT eventHandler.js: Luister naar navigatiekliks
   document.getElementById("app").addEventListener("click", (event) => {
     const target = event.target.closest('[data-action="navigate"]');
     if (target) {
-      event.preventDefault(); // Voorkom standaard anker-gedrag
+      event.preventDefault();
       const path = target.dataset.path;
-      if (path && window.location.hash !== path) {
-        window.location.hash = path;
+
+      if (path && path !== window.location.pathname) {
+        window.history.pushState({}, "", path);
+        handleRouteChange();
       }
     }
   });
 
-  // Laad de initiële route
   handleRouteChange();
 }
 
 async function handleRouteChange() {
-  let hash = window.location.hash || "#/home";
+  let path = window.location.pathname;
 
-  if (!routes[hash]) {
-    hash = "#/home";
+  if (!routes[path]) {
+    path = "/";
   }
 
-  const renderPage = routes[hash];
+  const renderPage = routes[path];
 
   if (renderPage) {
     pageContainer.innerHTML = "";
-    updateActiveLink(hash);
+    updateActiveLink(path);
 
     try {
       await renderPage(pageContainer);
     } catch (error) {
-      console.error(`Fout bij renderen van route ${hash}:`, error);
+      console.error(`Fout bij renderen van route ${path}:`, error);
       pageContainer.innerHTML = '<p style="color:red;">Pagina kon niet geladen worden.</p>';
     }
   }
 }
 
-function updateActiveLink(activeHash) {
+function updateActiveLink(activePath) {
   navLinks.forEach((link) => {
-    if (link.dataset.path === activeHash) {
+    if (link.dataset.path === activePath) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");

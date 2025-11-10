@@ -1,6 +1,3 @@
-// src/core/templateBuilder.js
-// Laadt en vult DYNAMISCHE pagina/component templates
-
 const templateCache = new Map();
 
 export async function loadTemplate(path) {
@@ -51,7 +48,6 @@ export function buildElementFromTemplate(config, data) {
 }
 
 function interpolate(text, data) {
-  // DE FIX: Zorg dat het niet crasht als 'text' geen string is
   if (typeof text !== "string") {
     return text;
   }

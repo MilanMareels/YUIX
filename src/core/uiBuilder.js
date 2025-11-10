@@ -1,8 +1,4 @@
-// src/core/uiBuilder.js
-// Bouwt de STATISCHE App Shell
-
 export function loadStaticUI(container) {
-  // 'return' is cruciaal voor de 'await' in main.js
   return fetch("ui.yml")
     .then((response) => response.text())
     .then((yamlText) => {
@@ -12,7 +8,7 @@ export function loadStaticUI(container) {
     })
     .catch((error) => {
       console.error("Fout bij het laden van de hoofd-YAML (ui.yml):", error);
-      throw error; // Gooi fout door naar main.js
+      throw error;
     });
 }
 

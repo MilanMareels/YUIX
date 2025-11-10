@@ -6,9 +6,8 @@ children:
   - tag: p
     text: Dit is de homepagina, geladen via de router.
 
-  # --- NIEUW ---
   - tag: div
-    id: counter-container # De "target" voor ons component
-    # De counter.js zal zichzelf hier in laden
+    id: counter-container
+
   - tag: div
     id: text-container
