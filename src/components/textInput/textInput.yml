@@ -1,4 +1,3 @@
-# src/components/textInput/textInput.yml
 tag: div
 class: text-component
 children:
@@ -6,11 +5,11 @@ children:
     text:
   - tag: input
     type: text
-    id: text-input # ID om de input-event te vangen
+    id: text-input
     class: text-field
     placeholder: "Typ iets..."
   - tag: p
     text: "De globale state 'myText' is nu: "
   - tag: span
-    id: text-display # ID om de state te tonen
+    id: text-display
     class: display-text

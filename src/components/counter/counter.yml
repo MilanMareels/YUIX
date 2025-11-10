@@ -3,13 +3,13 @@ class: counter-component
 children:
   - tag: button
     class: button
-    data-action: decrement # Lokale actie
+    data-action: decrement
     text: "-"
   - tag: span
     class: counter-display
-    id: counter-value # BELANGRIJKE ID om de waarde bij te werken
-    text: "0" # Beginwaarde
+    id: counter-value
+    text: "0"
   - tag: button
     class: button
-    data-action: increment # Lokale actie
+    data-action: increment
     text: "+"

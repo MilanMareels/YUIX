@@ -1,6 +1,3 @@
-// src/core/router.js
-// De complete router, handelt ook navigatiekliks af
-
 import { routes } from "../routes/routes.js";
 
 let pageContainer = null;
@@ -15,14 +12,12 @@ export function initRouter(containerId) {
 
   navLinks = document.querySelectorAll('.nav-link[data-action="navigate"]');
 
-  // Luister naar URL hash-veranderingen (back/forward knop)
   window.addEventListener("hashchange", handleRouteChange);
 
-  // VERVANGT eventHandler.js: Luister naar navigatiekliks
   document.getElementById("app").addEventListener("click", (event) => {
     const target = event.target.closest('[data-action="navigate"]');
     if (target) {
-      event.preventDefault(); // Voorkom standaard anker-gedrag
+      event.preventDefault();
       const path = target.dataset.path;
       if (path && window.location.hash !== path) {
         window.location.hash = path;
@@ -30,7 +25,6 @@ export function initRouter(containerId) {
     }
   });
 
-  // Laad de initiële route
   handleRouteChange();
 }
 
